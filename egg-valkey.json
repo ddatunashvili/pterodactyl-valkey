@@ -41,7 +41,7 @@
         {
             "name": "Eviction Policy",
             "description": "What happens at the memory limit (80% of the server's RAM). noeviction refuses writes and never loses data; allkeys-lru suits a pure cache.",
-            "env_variable": "VALKEY_MAXMEMORY_POLICY",
+            "env_variable": "VALKEY_EVICTION_POLICY",
             "default_value": "noeviction",
             "user_viewable": true,
             "user_editable": true,

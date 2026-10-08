@@ -10,7 +10,7 @@ if [ -z "${VALKEY_PASSWORD:-}" ]; then
 fi
 
 PORT="${SERVER_PORT:-6379}"
-POLICY="${VALKEY_MAXMEMORY_POLICY:-noeviction}"
+POLICY="${VALKEY_EVICTION_POLICY:-noeviction}"
 
 # maxmemory at ~80% of the container limit, leaving room for the process
 # itself, AOF rewrites and fork copy-on-write. A server past its limit is

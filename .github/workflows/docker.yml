@@ -55,7 +55,7 @@ jobs:
               --cap-drop dac_override --cap-drop fowner --cap-drop fsetid --cap-drop net_bind_service \
               --cap-drop sys_chroot --cap-drop setfcap --security-opt no-new-privileges \
               --memory 512m -p 25726:25726 -v /tmp/vol:/home/container \
-              -e VALKEY_PASSWORD=$PW -e VALKEY_MAXMEMORY_POLICY=noeviction -e SERVER_PORT=25726 \
+              -e VALKEY_PASSWORD=$PW -e VALKEY_EVICTION_POLICY=noeviction -e SERVER_PORT=25726 \
               -e RENODE_BANNER="$(printf 'RENODE BANNER OK\n' | base64)" \
               -e STARTUP="$STARTUP" valkey-test:ci
             for i in $(seq 1 30); do
